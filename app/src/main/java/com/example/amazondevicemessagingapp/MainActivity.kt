@@ -9,6 +9,7 @@ import com.amazon.device.messaging.development.ADMManifest
 import com.example.amazondevicemessagingapp.amazon.ADMHelper.MyTag
 import com.example.amazondevicemessagingapp.amazon.MyServerMsgHandler
 import com.example.amazondevicemessagingapp.databinding.ActivityMainBinding
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -21,10 +22,12 @@ class MainActivity : AppCompatActivity() {
 
         /* Register app with ADM. */
         //register();
-        var available = false
+
         try {
             Class.forName("com.amazon.device.messaging.ADM")
-            available = true
+           /* val receiverPermission = ADMManifest.getReceiverPermission(this)
+            Log.d("receiverPermission", "onCreate:  $receiverPermission")*/
+            //ADMManifest.checkManifestAuthoredProperly(this)
         } catch (e: ClassNotFoundException) {
             Log.e(MyTag, "onCreate: ${e.message}", )
             // Handle the exception.
@@ -36,20 +39,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun registerADM() {
-        try {
-            val adm:ADM=ADM(this)
-            if(adm.isSupported){
-                if(adm.registrationId==null){
-                    adm.startRegister()
+        lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                val adm: ADM = ADM(applicationContext)
+                if (adm.isSupported) {
+                    if (adm.registrationId == null) {
+                        adm.startRegister()
+                    } else {
+                        val myServiceMsgHandler: MyServerMsgHandler = MyServerMsgHandler()
+                        myServiceMsgHandler.registerAppInstance(
+                            applicationContext,
+                            adm.registrationId
+                        )
+                    }
                 }
-                else{
-                    val myServiceMsgHandler:MyServerMsgHandler=MyServerMsgHandler()
-                    myServiceMsgHandler.registerAppInstance(applicationContext,adm.registrationId)
-                }
+            } catch (e: Exception) {
+                Log.e("MyTag", "registerADM: ${e.message}",)
             }
-        }
-        catch (e: Exception) {
-            Log.e("MyTag", "registerADM: ${e.message}", )
         }
     }
 }
