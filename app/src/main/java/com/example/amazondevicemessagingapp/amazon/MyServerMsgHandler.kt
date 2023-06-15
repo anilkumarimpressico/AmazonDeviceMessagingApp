@@ -59,22 +59,22 @@ class MyServerMsgHandler {
         Log.i(TAG, "Sending registration id to 3rd party server $registrationId")
 
         /* Build the URL to address your server. Values for server_address and server_port must be set correctly in your string.xml file. */
-        val serverAddress = context.getString(R.string.server_address)
+        /*val serverAddress = context.getString(R.string.server_address)
         val serverPort = context.getString(R.string.server_port)
         val baseUrl = "$serverAddress:$serverPort"
 
-        /* Create Retrofit instance */
+        *//* Create Retrofit instance *//*
         val retrofit = Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(ScalarsConverterFactory.create())
             .build()
 
-        /* Create service interface */
+        *//* Create service interface *//*
         val service = retrofit.create(MyServerService::class.java)
 
-        /* Build the full URL and send the registration request asynchronously */
+        *//* Build the full URL and send the registration request asynchronously *//*
         val fullUrl = "$baseUrl$REGISTER_ROUTE?device=$registrationId"
-        sendHttpRequest(context, fullUrl)
+        sendHttpRequest(context, fullUrl)*/
     }
 
     /**

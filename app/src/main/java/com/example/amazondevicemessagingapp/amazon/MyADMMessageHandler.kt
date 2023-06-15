@@ -7,14 +7,11 @@ import com.amazon.device.messaging.ADMMessageHandlerJobBase
 import com.example.amazondevicemessagingapp.R
 import com.example.amazondevicemessagingapp.amazon.ADMHelper.MyTag
 
-import java.net.HttpURLConnection
-import java.net.URL
-
 /*This class extends the ADMMessageHandlerJobBase class, which is provided by the ADM SDK.
 It handles ADM-specific callbacks and actions related to registration, unregistration, and message reception.*/
-    class MyADMMessageHandler : ADMMessageHandlerJobBase() {
+class MyADMMessageHandler : ADMMessageHandlerJobBase() {
 
-    private  val TAG = "MyADMMessageHandler"
+    private val TAG = "MyADMMessageHandler"
     override fun onMessage(context: Context?, intent: Intent?) {
 
 

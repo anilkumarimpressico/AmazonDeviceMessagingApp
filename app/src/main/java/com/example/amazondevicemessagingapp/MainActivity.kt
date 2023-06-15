@@ -29,9 +29,6 @@ class MainActivity : AppCompatActivity() {
             Log.e(MyTag, "onCreate: ${e.message}", )
             // Handle the exception.
         }
-        if (available) {
-            ADMManifest.checkManifestAuthoredProperly(this)
-        }
         mBinding.btnRegister.setOnClickListener {
         registerADM()
         }
@@ -40,19 +37,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun registerADM() {
         try {
-            val adm:ADM=ADM(applicationContext)
+            val adm:ADM=ADM(this)
             if(adm.isSupported){
                 if(adm.registrationId==null){
                     adm.startRegister()
                 }
                 else{
                     val myServiceMsgHandler:MyServerMsgHandler=MyServerMsgHandler()
-                    //myServiceMsgHandler.registerAppInstance(applicationContext,adm.registrationId)
+                    myServiceMsgHandler.registerAppInstance(applicationContext,adm.registrationId)
                 }
             }
         }
         catch (e: Exception) {
-            Log.e("MyTag", "registerADM: ", )
+            Log.e("MyTag", "registerADM: ${e.message}", )
         }
     }
 }
