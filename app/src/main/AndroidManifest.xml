@@ -57,6 +57,7 @@
             android:value="com.example.amazondevicemessagingapp.a3l.MyA3LMessagingService" />
 
         <meta-data android:name="ADM_SERVER_CONFIG_FILE_NAME" android:value="adm_server_configuration.json" />
+
         <!--<meta-data android:name="FCM_SERVER_CONFIG_FILE_NAME" android:value="google-services.json" />-->
     </application>
 
