@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "596723169545",
+    "project_id": "testapp-e050f",
+    "storage_bucket": "testapp-e050f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596723169545:android:4634f1f0076f81cd167bd8",
+        "android_client_info": {
+          "package_name": "com.example.amazondevicemessagingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596723169545-n44r06s9u88djd6asklt727121epp5db.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amazondevicemessagingapp",
+            "certificate_hash": "004172f112a3c0177ce2bb261398fdc653604e35"
+          }
+        },
+        {
+          "client_id": "596723169545-23j1hrb9lkbnnvkdmtm4i6h0ncbsk7g2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4cz1bl_-81KrWtjJtFQiF8Kc80KAgu6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596723169545-23j1hrb9lkbnnvkdmtm4i6h0ncbsk7g2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,26 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_register"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:id="@+id/btn_firebase_token"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register Service"
+        android:text="Firebase Token"
+        android:textAllCaps="false"
+        android:textColor="@color/material_on_background_emphasis_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_unregister"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:id="@+id/btn_amazon_token"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register Service"
+        android:textColor="@color/material_on_background_emphasis_medium"
+        android:textAllCaps="false"
+        android:text="Amazon Token"
+        android:backgroundTint="@color/teal_200"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_register" />
+        app:layout_constraintTop_toBottomOf="@id/btn_firebase_token" />
 </androidx.constraintlayout.widget.ConstraintLayout>
